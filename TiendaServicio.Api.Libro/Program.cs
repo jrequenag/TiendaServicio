@@ -27,7 +27,12 @@ builder.Services.AddAutoMapper(System.Reflection.Assembly.GetExecutingAssembly()
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
-
+using (var serviceScope = app.Services.CreateScope())
+{
+    var context = serviceScope.ServiceProvider.GetRequiredService<ContextoLibreria>();
+    //context.Database.EnsureCreated();
+    context.Database.Migrate();
+}
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {

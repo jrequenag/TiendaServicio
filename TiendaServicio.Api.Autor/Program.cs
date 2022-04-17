@@ -42,5 +42,10 @@ if (app.Environment.IsDevelopment())
 app.UseAuthorization();
 
 app.MapControllers();
+using (var serviceScope = app.Services.CreateScope())
+{
+    var context = serviceScope.ServiceProvider.GetRequiredService<ContextoAutor>();
+    context.Database.Migrate();
+}
 
 app.Run();
