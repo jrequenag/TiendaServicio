@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net.Http;
-using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
 
@@ -30,7 +27,7 @@ namespace TiendaServicio.Api.CarritoCompra.RemoteService
             {
                 var client = _httpClient.CreateClient("Libros");
                 var response = await client.GetAsync($"api/Libro/{LibroId}");
-                if(response.IsSuccessStatusCode)
+                if (response.IsSuccessStatusCode)
                 {
                     var contenido = await response.Content.ReadAsStringAsync();
                     var options = new JsonSerializerOptions()

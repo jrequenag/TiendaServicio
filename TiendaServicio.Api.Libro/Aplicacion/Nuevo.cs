@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿
 using FluentValidation;
 
 using TiendaServicio.Api.Libro.Modelo;
@@ -26,7 +21,7 @@ namespace TiendaServicio.Api.Libro.Aplicacion
             {
                 RuleFor(x => x.AutorLibroId).NotEmpty()
                     .NotNull();
-                RuleFor(x=> x.Titulo).NotEmpty()
+                RuleFor(x => x.Titulo).NotEmpty()
                     .NotNull();
                 RuleFor(x => x.FechaPublicacion).NotEmpty();
 
@@ -47,7 +42,7 @@ namespace TiendaServicio.Api.Libro.Aplicacion
             }
             public async Task<Unit> Handle(Ejecuta request, CancellationToken cancellationToken)
             {
-                
+
                 await _contexto.LibreriaMaterial.AddAsync(_mapper.Map<Ejecuta, LibreriaMaterial>(request));
                 var valor = await _contexto.SaveChangesAsync();
                 if (valor > 0)

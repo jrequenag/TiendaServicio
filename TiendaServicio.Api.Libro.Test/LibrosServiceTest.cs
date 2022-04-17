@@ -28,8 +28,8 @@ namespace TiendaServicio.Api.Libro.Test
 
             //Generador de datos de prueba con GenFu;
             A.Configure<LibreriaMaterial>()
-                .Fill(x=> x.Titulo).AsArticleTitle()
-                .Fill(x=> x.LibreriaMaterialId, () => { return Guid.NewGuid(); });
+                .Fill(x => x.Titulo).AsArticleTitle()
+                .Fill(x => x.LibreriaMaterialId, () => { return Guid.NewGuid(); });
 
             var list = A.ListOf<LibreriaMaterial>(30);
 
@@ -129,9 +129,9 @@ namespace TiendaServicio.Api.Libro.Test
                 Assert.Contains("No se encontro", ex.Message);
             }
 
-            
 
-            
+
+
 
         }
         [Fact]
@@ -154,7 +154,7 @@ namespace TiendaServicio.Api.Libro.Test
             };
             var manejador = new Nuevo.Manejador(contexto, mapper);
             var result = await manejador.Handle(resquest, new System.Threading.CancellationToken());
-            Assert.Equal(Unit.Value, result);            
+            Assert.Equal(Unit.Value, result);
         }
 
     }

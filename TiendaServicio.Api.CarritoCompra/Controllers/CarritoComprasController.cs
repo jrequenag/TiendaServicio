@@ -25,7 +25,7 @@ namespace TiendaServicio.Api.CarritoCompra.Controllers
         [HttpGet("{id:int}")]
         public async Task<ActionResult<CarritoDto>> GetCarrito(int id)
         {
-            return await _mediator.Send(new Consulta.Ejecuta { CarritoSesionId =  id });
+            return await _mediator.Send(new Consulta.Ejecuta { CarritoSesionId = id });
         }
     }
 }

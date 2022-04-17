@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -35,11 +34,11 @@ namespace TiendaServicio.Api.CarritoCompra.Aplicaciones
 
                 var listaCarritoDto = new List<CarritoDetalleDto>();
 
-                var carritoSesion = await _context.CarritoSesion.FirstOrDefaultAsync(x=> x.CarritoSesionId == request.CarritoSesionId);
+                var carritoSesion = await _context.CarritoSesion.FirstOrDefaultAsync(x => x.CarritoSesionId == request.CarritoSesionId);
                 if (carritoSesion is null)
                     return null;
 
-                var carritoSesionDetalle = await _context.CarritoSesionDetalle.Where(x=> x.CarritoSesionId == request.CarritoSesionId).ToListAsync();
+                var carritoSesionDetalle = await _context.CarritoSesionDetalle.Where(x => x.CarritoSesionId == request.CarritoSesionId).ToListAsync();
                 if (carritoSesionDetalle is null)
                     return null;
 
@@ -57,7 +56,7 @@ namespace TiendaServicio.Api.CarritoCompra.Aplicaciones
                         };
                         listaCarritoDto.Add(carritoDetalle);
                     }
-                        
+
                 }
 
                 var carritoSesionDto = new CarritoDto()

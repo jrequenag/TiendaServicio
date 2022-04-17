@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿
 using Microsoft.EntityFrameworkCore;
 
 using TiendaServicio.Api.Libro.Modelo;
@@ -13,7 +8,7 @@ namespace TiendaServicio.Api.Libro.Aplicacion
 {
     public class Consulta
     {
-        public class  Ejecuta : IRequest<IList<LibreriaMaterialDto>> { }
+        public class Ejecuta : IRequest<IList<LibreriaMaterialDto>> { }
         public class Manejador : IRequestHandler<Ejecuta, IList<LibreriaMaterialDto>>
         {
             private readonly ContextoLibreria _contexto;

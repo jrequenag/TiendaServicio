@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -49,8 +47,8 @@ namespace TiendaServicio.Api.CarritoCompra.Aplicaciones
                 };
                 await _contexto.CarritoSesion.AddAsync(carritoSesion);
                 var valor = await _contexto.SaveChangesAsync();
-                if(valor == 0)
-                    throw new Exception("No se pudo insertar el detalle de compra"); 
+                if (valor == 0)
+                    throw new Exception("No se pudo insertar el detalle de compra");
                 foreach (var item in request.ProductoLista)
                 {
                     var detalle = new CarritoSesionDetalle()

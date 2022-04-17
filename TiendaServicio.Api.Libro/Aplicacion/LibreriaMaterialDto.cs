@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace TiendaServicio.Api.Libro.Aplicacion
+﻿namespace TiendaServicio.Api.Libro.Aplicacion
 {
     public class LibreriaMaterialDto
     {

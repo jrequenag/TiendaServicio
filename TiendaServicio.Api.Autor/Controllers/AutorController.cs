@@ -2,7 +2,6 @@
 using Microsoft.AspNetCore.Mvc;
 
 using TiendaServicio.Api.Autor.Aplicacion;
-using TiendaServicio.Api.Autor.Modelo;
 
 namespace TiendaServicio.Api.Autor.Controllers
 {

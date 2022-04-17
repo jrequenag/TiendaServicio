@@ -28,7 +28,7 @@ namespace TiendaServicio.Api.Autor.Aplicacion
                 var autor = await _contexto.AutorLibros.FirstOrDefaultAsync(x => x.AutorLibroGuid == request.AutorGuid);
                 if (autor == null)
                     throw new Exception("No se encontro el autor");
-                return _mapper.Map<AutorLibro, AutorDto>( autor);
+                return _mapper.Map<AutorLibro, AutorDto>(autor);
             }
         }
     }
