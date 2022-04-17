@@ -8,7 +8,7 @@ namespace TiendaServicio.Api.CarritoCompra.Modelo
 {
     public class CarritoSesion
     {
-        internal object request;
+        //internal object request;
 
         public int CarritoSesionId { get; set; }
         public DateTime? FechaCreacion { get; set; }
